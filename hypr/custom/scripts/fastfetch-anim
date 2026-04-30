@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+script -q -c "FORCE_COLOR=1 fastfetch" /dev/null | while IFS= read -r line; do
+  printf '%b\n' "$line"
+  sleep 0.01
+done
