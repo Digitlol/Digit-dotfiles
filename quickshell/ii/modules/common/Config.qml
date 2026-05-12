@@ -165,7 +165,7 @@ Singleton {
                 property JsonObject widgets: JsonObject {
                     property JsonObject clock: JsonObject {
                         property bool enable: true
-                        property bool showOnlyWhenLocked: true
+                        property bool showOnlyWhenLocked: false
                         property string placementStrategy: "leastBusy" // "free", "leastBusy", "mostBusy"
                         property real x: 100
                         property real y: 100
@@ -578,11 +578,11 @@ Singleton {
                 property int adviseUpdateThreshold: 75 // packages
                 property int stronglyAdviseUpdateThreshold: 200 // packages
             }
-
+            
             property JsonObject wallpaperSelector: JsonObject {
                 property bool useSystemFileDialog: false
             }
-
+            
             property JsonObject windows: JsonObject {
                 property bool showTitlebar: true // Client-side decoration for shell apps
                 property bool centerTitle: true
@@ -606,7 +606,7 @@ Singleton {
 
             property JsonObject waffles: JsonObject {
                 // Some spots are kinda janky/awkward. Setting the following to
-                // false will make (some) stuff also be like that for accuracy.
+                // false will make (some) stuff also be like that for accuracy. 
                 // Example: the right-click menu of the Start button
                 property JsonObject tweaks: JsonObject {
                     property bool switchHandlePositionFix: true
