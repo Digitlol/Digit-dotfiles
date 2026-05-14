@@ -6,8 +6,8 @@ if hyprctl clients | grep -q "class: discord"; then
     exit 0
 fi
 
-# Launch Discord
-discord &
+# Launch Discord (Wayland attempt first)
+ELECTRON_OZONE_PLATFORM_HINT=x11 discord &
 
 # Wait for window to exist
 for i in {1..20}; do
@@ -17,5 +17,5 @@ for i in {1..20}; do
     sleep 0.05
 done
 
-# Instead of toggle → force workspace focus
+# Focus workspace
 hyprctl dispatch workspace special:communication
