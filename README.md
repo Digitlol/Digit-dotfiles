@@ -1,49 +1,75 @@
 <div align="center">
-    <h1>【 Digit's Hyprland dotfiles 】</h1>
-    <h3></h3>
+    <h1>✦ Digit’s Hyprland Dotfiles ✦</h1>
+    <h3>custom Hyprland setup • Quickshell-driven • daily-use focused</h3>
 </div>
 
 <div align="center">
-    <h2>• Overview •</h2>
-    <h3></h3>
+    <h2>⟡ Overview ⟡</h2>
 </div>
 
-<details> 
-  <summary>What is this?</summary>
+A personal Hyprland configuration forked from End_4’s dotfiles, modified for my own workflow, UI preferences, and daily use.
 
-  - Dotfile configuration files from End_4 with my own tweaks
-  - It uses Quickshell for a lot of the aspects
-  - Options for [Waypaper](https://github.com/anufrievroman/waypaper) with a script if needed
-  - See [the wiki](https://ii.clsty.link/en/) for details
-  - See [deepseek wiki](https://deepwiki.com/end-4/dots-hyprland) for more details and help from AI
-  
+<details>
+<summary><b>⟡ What this is ⟡</b></summary>
+
+This is a customised Hyprland dotfile setup built on top of End_4’s work.
+
+- Config-based desktop environment (not a full system installer)
+- Heavily centered around Quickshell for UI and shell components
+- Designed for usability, consistency, and daily workflow
+- Optional Waypaper integration for wallpaper management
+- Personal tweaks layered on top of upstream structure
+- Moved from Hyprlang -> Lua via the lua-main branch
+
+References:
+- Wiki: https://ii.clsty.link/en/
+- DeepWiki: https://deepwiki.com/end-4/dots-hyprland
+
 </details>
 
-<details> 
-  <summary>Notable features</summary>
-     
-  - **Overview**: Shows open apps with live previews
-  - **AI**: Gemini, Ollama, and more
-  - **QoL**: screen translation, anti-flashbang, Google Lens
-  - **Material themes**: Choose your wallpaper, done, enjoy
-  - **Transparent installation**: Every command is shown before it's run
-  - **Waypaper(Optional)**: Commented out by default, and will need the Quickshell background widget commented out to use this feature
+<details>
+<summary><b>⟡ Notable features ⟡</b></summary>
+
+- Workspace overview → live app previews and window tracking
+- AI integration → Gemini, Ollama, and extensible backends
+- Quality-of-life tools → screen translation, anti-flashbang, Google Lens shortcuts
+- Material-style theming → wallpaper switching with consistent UI theming
+- Transparent install process → commands shown before execution
+- Optional Waypaper mode → disabled by default
+
 </details>
 
-<details> 
-  <summary>Original Dotfiles</summary>
+<details>
+<summary><b>⟡ Installation & keybinds ⟡</b></summary>
 
-   - Find the original [End_4 Dotfiles here](https://github.com/end-4/dots-hyprland) - if you need something basic
-   - See [the wiki](https://ii.clsty.link/en/ii-qs/01setup/) for more details
-   - **Keybinds**:
-     - `Super`+`/` = keybind list
-     - `Super`+`Enter` = terminal
+⚠️ If your distro has not yet shipped Hyprland 0.55, check the wiki before installing.
+
+Quick install:
+bash <(curl -s https://ii.clsty.link/get)
+
+Manual install:
+git clone https://github.com/end-4/dots-hyprland
+cd dots-hyprland
+./setup install
+
+Keybinds:
+- Super + / → keybind list
+- Super + Enter → terminal
+
 </details>
 
 <div align="center">
-    <h2>• Demo •</h2>
+    <h2>⟡ Stack ⟡</h2>
 </div>
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=e2odl_kQdSU">Showcase video</a>
-</p>
+- Hyprland → Wayland compositor
+- Quickshell → UI / shell system (core of this setup)
+- Supporting tools → see upstream dependency list
+
+<div align="center">
+    <h2>⟡ Demo ⟡</h2>
+</div>
+
+<div align="center">
+    ✦ <a href="https://www.youtube.com/watch?v=e2odl_kQdSU">Watch showcase video</a> ✦
+</div>
