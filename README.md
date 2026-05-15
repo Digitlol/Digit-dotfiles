@@ -41,7 +41,7 @@ References:
 </details>
 
 <details>
-<summary><b>⟡ End-4 Installation & keybinds ⟡</b></summary>
+<summary><b>⟡ Installation & keybinds ⟡</b></summary>
 
 ⚠️ If your distro has not yet shipped Hyprland 0.55, check the wiki before installing.
 
