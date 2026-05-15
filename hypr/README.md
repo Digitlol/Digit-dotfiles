@@ -1,6 +1,6 @@
 <div align="center">
     <h1>✦ Digit’s Hyprland Dotfiles ✦</h1>
-    <h3>custom Hyprland setup • Quickshell-driven • daily-use focused</h3>
+    <h3>Custom Hyprland setup • Quickshell-driven • Daily-use focused</h3>
 </div>
 
 <div align="center">
