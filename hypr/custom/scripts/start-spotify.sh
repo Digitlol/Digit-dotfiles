@@ -1,3 +1,3 @@
 #!/bin/bash
 sleep 5
-hyprctl dispatch exec [workspace special:music silent] spotify
+hyprctl dispatch 'hl.dsp.exec_cmd("spotify", { workspace = "special:music silent" })'

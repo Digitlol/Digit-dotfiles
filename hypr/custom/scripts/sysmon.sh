@@ -1,21 +1,24 @@
 #!/bin/bash
 
-# If already running → just open workspace
-if hyprctl clients | grep -q "class: btop"; then
-    hyprctl dispatch togglespecialworkspace sysmon
+WORKSPACE="sysmon"
+CLASS="btop"
+
+# If already running → toggle special workspace
+if hyprctl clients | grep -qi "class: $CLASS"; then
+    hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("sysmon"))'
     exit 0
 fi
 
-# Launch
+# Launch btop in kitty
 kitty --class btop -e btop &
 
 # Wait for window to exist
 for i in {1..20}; do
-    if hyprctl clients | grep -q "class: btop"; then
+    if hyprctl clients | grep -qi "class: $CLASS"; then
         break
     fi
     sleep 0.05
 done
 
-# Instead of toggle → force workspace focus
-hyprctl dispatch workspace special:sysmon
+# Focus special workspace
+hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = "special:sysmon" }))'

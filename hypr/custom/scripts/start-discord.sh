@@ -1,21 +1,24 @@
 #!/bin/bash
 
-# If already running → just open workspace
-if hyprctl clients | grep -q "class: discord"; then
-    hyprctl dispatch togglespecialworkspace communication
+WORKSPACE="communication"
+CLASS="discord"
+
+# If Discord already running → toggle special workspace
+if hyprctl clients | grep -qi "class: $CLASS"; then
+    hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("communication"))'
     exit 0
 fi
 
-# Launch Discord (Wayland attempt first)
+# Launch Discord
 ELECTRON_OZONE_PLATFORM_HINT=x11 discord &
 
-# Wait for window to exist
-for i in {1..20}; do
-    if hyprctl clients | grep -q "class: discord"; then
+# Wait for window
+for i in {1..40}; do
+    if hyprctl clients | grep -qi "class: $CLASS"; then
         break
     fi
     sleep 0.05
 done
 
 # Focus workspace
-hyprctl dispatch workspace special:communication
+hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = "special:communication" }))'
