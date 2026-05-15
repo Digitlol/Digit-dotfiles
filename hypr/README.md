@@ -24,6 +24,7 @@ This is a customised Hyprland dotfile setup built on top of End_4’s work.
 References:
 - Wiki: https://ii.clsty.link/en/
 - DeepWiki: https://deepwiki.com/end-4/dots-hyprland
+- Original End-4 repo: https://github.com/end-4/dots-hyprland
 
 </details>
 
@@ -40,17 +41,21 @@ References:
 </details>
 
 <details>
-<summary><b>⟡ Installation & keybinds ⟡</b></summary>
+<summary><b>⟡ End-4 Installation & keybinds ⟡</b></summary>
 
 ⚠️ If your distro has not yet shipped Hyprland 0.55, check the wiki before installing.
 
-Quick install:
-bash <(curl -s https://ii.clsty.link/get)
+- End-4 Quick install:
+  - Run `bash <(curl -s https://ii.clsty.link/get)`
 
-Manual install:
-git clone https://github.com/end-4/dots-hyprland
-cd dots-hyprland
-./setup install
+- End-4 Manual install:
+  - Run `git clone https://github.com/end-4/dots-hyprland`
+  - Run `cd dots-hyprland`
+  - Run `./setup install`
+
+- My Tweaks Manual install:
+  - Run `git clone https://github.com/Digitlol/Digit-dotfiles`
+  - Extract & move each folder into `~/.config` manually
 
 Keybinds:
 - Super + / → keybind list
@@ -64,7 +69,7 @@ Keybinds:
 
 - Hyprland → Wayland compositor
 - Quickshell → UI / shell system (core of this setup)
-- Supporting tools → see upstream dependency list
+- Supporting tools → see End-4's dependency list
 
 <div align="center">
     <h2>⟡ Demo ⟡</h2>
