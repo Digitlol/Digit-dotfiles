@@ -1,8 +1,12 @@
--- Sets Mouse Acceleration -> Off // Sensitivity -> Raw
+-- Hyprland input config
 hl.config({
     input = {
         accel_profile = "flat",
         sensitivity = 0,
+    },
+
+    cursor = {
+        sync_gsettings_theme = true,
     }
 })
 

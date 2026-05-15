@@ -31,3 +31,10 @@ hl.env("GTK_THEME", "adw-gtk3-dark")
 -- 4. Virtual Environment
 -- ==========================================
 hl.env("ILLOGICAL_IMPULSE_VIRTUAL_ENV", home_dir .. "/.local/state/quickshell/.venv")
+
+-- ==========================================
+-- 5. Portal Fixes
+-- ==========================================
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")

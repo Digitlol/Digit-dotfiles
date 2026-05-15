@@ -3,40 +3,34 @@
 -- Spotify
 hl.window_rule({
     match = { class = "^(Spotify|spotify)$" },
-    workspace = "special:music silent"
-})
-hl.window_rule({
-    match = { class = "^(Spotify|spotify)$" },
-    opacity = 0.9
+    workspace = "special:music silent",
+    opacity = 0.9,
+    no_initial_focus = true,
+    focus_on_activate = false
 })
 
 -- Discord
 hl.window_rule({
     match = { initial_class = "^(Discord|discord)$" },
-    workspace = "special:communication silent"
-})
-hl.window_rule({
-    match = { initial_class = "^(Discord|discord)$" },
-    opacity = 0.97
+    workspace = "special:communication silent",
+    opacity = 0.97,
+    no_initial_focus = true,
+    focus_on_activate = false
 })
 
 -- Slack
 hl.window_rule({
     match = { class = "^(Slack|slack)$" },
-    workspace = "special:slack silent"
-})
-hl.window_rule({
-    match = { class = "^(Slack|slack)$" },
-    opacity = 0.97
+    workspace = "special:slack silent",
+    opacity = 0.97,
+    no_initial_focus = true,
+    focus_on_activate = false
 })
 
 -- Btop
 hl.window_rule({
     match = { class = "^(btop|Btop)$" },
-    workspace = "special:sysmon"
-})
-hl.window_rule({
-    match = { class = "^(btop|Btop)$" },
+    workspace = "special:sysmon",
     opacity = 0.8
 })
 
@@ -73,39 +67,27 @@ hl.window_rule({
 -- Discord RPC
 hl.window_rule({
     match = { class = "^(rpc-toggle$)" },
-    float = true
-})
-hl.window_rule({
-    match = { class = "^(rpc-toggle$)" },
-    center = true
-})
-hl.window_rule({
-    match = { class = "^(rpc-toggle$)" },
+    float = true,
+    center = true,
     size = { "(monitor_w*0.50)", "(monitor_h*0.50)" }
 })
 
 -- QRClip
 hl.window_rule({
     match = { class = "^(QR-clip)$" },
-    float = true
-})
-hl.window_rule({
-    match = { class = "^(QR-clip)$" },
-    center = true
-})
-hl.window_rule({
-    match = { class = "^(QR-clip)$" },
+    float = true,
+    center = true,
     size = { "(monitor_w*0.50)", "(monitor_h*0.50)" }
 })
 
 -- Telegram
 hl.window_rule({
     match = { class = "^(TelegramDesktop|telegram-desktop)$" },
-    no_focus = true
+    focus_on_activate = false
 })
 hl.window_rule({
     match = { title = "^(Telegram|telegram)$" },
-    no_focus = true
+    focus_on_activate = false
 })
 
 -- Superhuman

@@ -10,7 +10,7 @@ if hyprctl clients | grep -qi "class: $CLASS"; then
 fi
 
 # Launch Discord
-ELECTRON_OZONE_PLATFORM_HINT=x11 discord &
+ELECTRON_OZONE_PLATFORM_HINT=wayland discord &
 
 # Wait for window
 for i in {1..40}; do
