@@ -58,8 +58,16 @@ References:
   - Extract & move each folder into `~/.config` manually
 
 Keybinds:
-- Super + / → keybind list
-- Super + Enter → terminal
+- `Super`+`/` = keybind list
+- `Super`+`Enter` = terminal
+- `Super`+`C` = Discord auto launch + workspace
+- `Super`+`X` = Spotify workspace (The application is launched at startup)
+- `Super`+`S` = Slack workspace
+- `Super`+`Z` = Zeditor
+- `Super`+`A` = Gnome Clocks
+- `Super`+`W` = Brave
+- `Super`+`Shift`+`W` = Brave work
+- `Ctrl`+`Shift`+`Escape` = Kitty w/ Btop
 
 </details>
 
