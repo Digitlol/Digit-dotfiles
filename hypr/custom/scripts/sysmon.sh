@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WORKSPACE="sysmon"
-CLASS="btop"
+CLASS="io.missioncenter.MissionCenter"
 
 # If already running → toggle special workspace
 if hyprctl clients | grep -qi "class: $CLASS"; then
@@ -9,8 +9,8 @@ if hyprctl clients | grep -qi "class: $CLASS"; then
     exit 0
 fi
 
-# Launch btop in kitty
-kitty --class btop -e btop &
+# Launch Mission Center
+missioncenter &
 
 # Wait for window to exist
 for i in {1..20}; do

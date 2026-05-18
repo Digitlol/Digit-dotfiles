@@ -1,8 +1,6 @@
 #!/bin/bash
 # Wait for EasyEffects virtual mic to exist, then set it as default
 
-sleep 5
-
 EE_SOURCE="easyeffects_source"
 
 while ! pactl list short sources | grep -q "$EE_SOURCE"; do

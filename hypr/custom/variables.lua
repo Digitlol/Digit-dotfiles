@@ -1,6 +1,7 @@
 -- Hyprland input config
 hl.config({
     input = {
+        force_no_accel = true,
         accel_profile = "flat",
         sensitivity = 0,
     },
@@ -17,7 +18,7 @@ hl.config({
 --     }
 -- })
 
-Browser = 'brave --profile-directory="Default" --disable-gpu-compositing'
-Workbrowser = 'brave --profile-directory="Profile 1" --disable-gpu-compositing'
+Browser = 'helium-browser --profile-directory="Profile 1"'
+Workbrowser = 'helium-browser --profile-directory="Profile 2"'
 TaskManager = "$HOME/.config/hypr/custom/scripts/sysmon.sh"
 Discord = "$HOME/.config/hypr/custom/scripts/start-discord.sh"

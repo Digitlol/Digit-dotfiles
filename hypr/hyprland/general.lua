@@ -1,10 +1,10 @@
 -- MONITOR CONFIG
-hl.monitor({
-    output = "",
-    mode = "preferred",
-    position = "auto",
-    scale = "1"
-})
+--hl.monitor({
+--    output = "",
+--    mode = "preferred",
+--    position = "auto",
+--    scale = "1"
+--})
 
 hl.gesture({
     fingers = 3,
@@ -48,7 +48,7 @@ hl.config({
     general = {
         -- Gaps and border
         gaps_in = 4,
-        gaps_out = 5,
+        gaps_out = 20,
         gaps_workspaces = 50,
 
         border_size = 1,
@@ -161,9 +161,9 @@ hl.animation({
     style = "popin 80%"
 })
 hl.animation({
-    leaf = "fadeIn",
+    leaf = "windowsIn",
     enabled = true,
-    speed = 3,
+    speed = 2.5,
     bezier = "emphasizedDecel"
 })
 hl.animation({
@@ -182,7 +182,7 @@ hl.animation({
 hl.animation({
     leaf = "windowsMove",
     enabled = true,
-    speed = 3,
+    speed = 4,
     bezier = "emphasizedDecel",
     style = "slide"
 })
@@ -257,7 +257,7 @@ hl.config({
         kb_layout = "us",
         numlock_by_default = true,
         repeat_delay = 250,
-        repeat_rate = 35,
+        repeat_rate = 20,
 
         follow_mouse = 1,
         off_window_axis_events = 2,
