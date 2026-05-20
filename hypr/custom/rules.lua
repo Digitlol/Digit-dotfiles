@@ -20,16 +20,23 @@ hl.window_rule({
 
 -- Slack Workspace
 hl.window_rule({
-    match = { class = "^(Slack|slack)$" },
+    match = { class = "^(com.slack.Slack)$" },
     workspace = "special:slack silent",
     opacity = 0.85,
     no_initial_focus = true,
     focus_on_activate = false
 })
 
+hl.window_rule({
+    match = {initial_title = "^Huddle:.*"},
+    workspace = "special:slack silent",
+    float = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.50)" }
+})
+
 -- Mission Center Workspace
 hl.window_rule({
-    match = { class = "^(io.missioncenter.MissionCenter)$" },
+    match = { class = "^(btop)$" },
     workspace = "special:sysmon",
     opacity = 0.8
 })
@@ -60,7 +67,7 @@ hl.window_rule({
 })
 hl.window_rule({
     match = { class = "^(Steam|steam)$" },
-    opacity = 1,
+    opacity = 0.98,
     no_blur = true
 })
 
@@ -82,6 +89,15 @@ hl.window_rule({
 
 hl.window_rule({
     match = { class = "^(chrome-nngceckbapebfimnlniiiahkandclblb-Profile_2)$" },
+    float = true,
+    center = true,
+    size = { "(monitor_w*0.40)", "(monitor_h*0.50)" },
+    opacity = 0.85,
+    no_blur = false
+})
+
+hl.window_rule({
+    match = { class = "^(brave-nngceckbapebfimnlniiiahkandclblb-Profile_1)$" },
     float = true,
     center = true,
     size = { "(monitor_w*0.40)", "(monitor_h*0.50)" },
@@ -134,4 +150,10 @@ hl.window_rule({
 hl.window_rule({
     match = { title = "^(WhatsApp Web|whatsapp web)$" },
     opacity = 0.85,
+})
+
+-- Pavucontrol
+hl.window_rule({
+    match = { class = "^(pavucontrol-qt)$" },
+    opacity = 0.95
 })
