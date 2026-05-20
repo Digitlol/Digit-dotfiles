@@ -19,7 +19,7 @@ hl.on("hyprland.start", function()
     -- ==========================================
     -- 3. Audio
     -- ==========================================
-    hl.exec_cmd("easyeffects --hide-window --service-mode")
+  --  hl.exec_cmd("easyeffects --hide-window --service-mode")
 
     -- ==========================================
     -- 4. Clipboard History (Cliphist)

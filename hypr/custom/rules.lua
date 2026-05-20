@@ -9,7 +9,7 @@ hl.window_rule({
     focus_on_activate = false
 })
 
--- Discord
+-- Discord Workspace
 hl.window_rule({
     match = { initial_class = "^(Discord|discord)$" },
     workspace = "special:communication silent",
@@ -18,7 +18,7 @@ hl.window_rule({
     focus_on_activate = false
 })
 
--- Slack
+-- Slack Workspace
 hl.window_rule({
     match = { class = "^(Slack|slack)$" },
     workspace = "special:slack silent",
@@ -27,7 +27,7 @@ hl.window_rule({
     focus_on_activate = false
 })
 
--- Mission Center
+-- Mission Center Workspace
 hl.window_rule({
     match = { class = "^(io.missioncenter.MissionCenter)$" },
     workspace = "special:sysmon",
@@ -39,8 +39,13 @@ hl.window_rule({
     match = { class = "^(dev.zed.Zed)$" },
     opacity = 0.85
 })
+-- Gnome Clocks
+hl.window_rule({
+    match = { initial_class = "^(org.gnome.clocks|org.gnome.clocks)$" },
+    opacity = 0.85
+})
 
--- Steam
+-- Steam - The order matters
 hl.window_rule({
     match = { initial_title = "^(Friends List|friends list)$" },
     float = true
@@ -73,14 +78,15 @@ hl.window_rule({
     size = { "(monitor_w*0.50)", "(monitor_h*0.50)" },
     opacity = 0.85
 })
--- Helium Tweaks - Bitwarden
+-- Helium Tweaks - Bitwarden pop-up to float + center w/ blur
 
 hl.window_rule({
     match = { class = "^(chrome-nngceckbapebfimnlniiiahkandclblb-Profile_2)$" },
     float = true,
     center = true,
     size = { "(monitor_w*0.40)", "(monitor_h*0.50)" },
-    opacity = 0.85
+    opacity = 0.85,
+    no_blur = false
 })
 
 -- QRClip
@@ -92,42 +98,39 @@ hl.window_rule({
     opacity = 0.85
 })
 
--- Telegram
+-- Telegram (Stop it's fucking crap)
 hl.window_rule({
-    match = { class = "^(TelegramDesktop|telegram-desktop)$" },
+    match = { class = "^(org.telegram.desktop)$" },
     focus_on_activate = false,
-    no_focus = true
 })
 hl.window_rule({
-    match = { title = "^(Telegram|telegram)$" },
+    match = { initial_title = "^(Telegram|telegram)$" },
     focus_on_activate = false,
-    no_focus = true
 })
 
--- Superhuman
+-- Superhuman Web PWA
 hl.window_rule({
     match = { title = "^(Superhuman|superhuman)$" },
-    opacity = 0.85,
-    no_focus = true
+    opacity = 0.85
 })
 hl.window_rule({
     match = { initial_title = "^(Superhuman|superhuman)$" },
     opacity = 0.85
 })
 
--- Dolphin
+-- Dolphin (To stop lag when using Dolphin drag select)
 hl.window_rule({
     match = { class = "^(org.kde.dolphin$)" },
-    opacity = 0.85
+    no_blur = true
 })
 
--- Quo
+-- Quo Web PWA
 hl.window_rule({
     match = { initial_title = "^(quo|Quo)$" },
     opacity = 0.85
 })
 
--- WhatsApp
+-- WhatsApp Web PWA
 hl.window_rule({
     match = { title = "^(WhatsApp Web|whatsapp web)$" },
     opacity = 0.85,

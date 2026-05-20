@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Start EasyEffects
+easyeffects --gapplication-service &
 
 # Wait until easyeffects_source exists AND is usable
 while ! pactl list sources short | grep -q "easyeffects_source"; do

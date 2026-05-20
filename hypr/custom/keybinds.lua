@@ -6,11 +6,11 @@ hl.bind("CTRL+SUPER+ALT+Slash", hl.dsp.exec_cmd("xdg-open ~/.config/hypr/custom/
 --##! My Apps ^^
 
 hl.bind("SUPER + W", hl.dsp.exec_cmd(Browser), {
-    description = "App:Brave"
+    description = "App:Helium"
 })
 
 hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(Workbrowser), {
-    description = "App:Brave Work"
+    description = "App:Helium - Work"
 })
 
 hl.bind("SUPER + X", hl.dsp.workspace.toggle_special("music"), {

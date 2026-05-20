@@ -51,7 +51,7 @@ hl.config({
         gaps_out = 20,
         gaps_workspaces = 50,
 
-        border_size = 1,
+        border_size = 3,
 
         col = {
             active_border = "rgba(0DB7D455)",
@@ -72,15 +72,15 @@ hl.config({
         -- 2 = circle, higher = squircle, 4 = very obvious squircle
         -- Fuck clearly visible squircles. 100% Apple brainrot.
         rounding_power = 2.5,
-        rounding = 18,
+        rounding = 10,
 
         blur = {
             enabled = true,
             xray = true,
             special = false,
             new_optimizations = true,
-            size = 10,
-            passes = 3,
+            size = 8,
+            passes = 2,
             brightness = 1,
             noise = 0.05,
             contrast = 0.89,

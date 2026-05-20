@@ -19,9 +19,8 @@ hl.env("QT_QPA_PLATFORMTHEME", "kde")    -- Use KDE integration for Qt apps
 -- ==========================================
 -- 3. Application Paths & Themes
 -- ==========================================
-hl.env("XDG_DATA_DIRS",
-    home_dir ..
-    "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:$XDG_DATA_DIRS")
+local xdg_data_dirs_old = os.getenv("XDG_DATA_DIRS") or ""
+hl.env("XDG_DATA_DIRS", home_dir .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:" .. xdg_data_dirs_old)
 hl.env("XDG_MENU_PREFIX", "plasma-") -- Use Plasma menu prefix for shortcuts
 
 -- GTK Theme (Added back from your custom conf)
@@ -38,3 +37,9 @@ hl.env("ILLOGICAL_IMPULSE_VIRTUAL_ENV", home_dir .. "/.local/state/quickshell/.v
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+
+-- ==========================================
+-- 6. Cursor Fixes
+-- ==========================================
+hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
