@@ -20,7 +20,7 @@ hl.window_rule({
 
 -- Slack Workspace
 hl.window_rule({
-    match = { class = "^(com.slack.Slack)$" },
+    match = { class = "^(slack)$" },
     workspace = "special:slack silent",
     opacity = 0.85,
     no_initial_focus = true,
@@ -28,10 +28,10 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = {initial_title = "^Huddle:.*"},
+    match = {title = "^Huddle:.*"},
     workspace = "special:slack silent",
     float = true,
-    size = { "(monitor_w*0.60)", "(monitor_h*0.50)" }
+    size = { "(monitor_w*0.70)", "(monitor_h*0.70)" }
 })
 
 -- Mission Center Workspace
