@@ -116,7 +116,6 @@ Item { // Bar content region
             Resources {
                 alwaysShowAllResources: root.useShortenedForm === 2
                 Layout.fillWidth: root.useShortenedForm === 2
-                visible: false
             }
 
             Media {
