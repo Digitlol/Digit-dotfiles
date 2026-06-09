@@ -48,7 +48,7 @@ hl.config({
     general = {
         -- Gaps and border
         gaps_in = 4,
-        gaps_out = 20,
+        gaps_out = 30,
         gaps_workspaces = 50,
 
         border_size = 3,
@@ -72,7 +72,7 @@ hl.config({
         -- 2 = circle, higher = squircle, 4 = very obvious squircle
         -- Fuck clearly visible squircles. 100% Apple brainrot.
         rounding_power = 2.5,
-        rounding = 10,
+        rounding = 8,
 
         blur = {
             enabled = true,
@@ -163,7 +163,7 @@ hl.animation({
 hl.animation({
     leaf = "windowsIn",
     enabled = true,
-    speed = 2.5,
+    speed = 4,
     bezier = "emphasizedDecel"
 })
 hl.animation({
@@ -227,7 +227,7 @@ hl.animation({
     enabled = true,
     speed = 7,
     bezier = "menu_decel",
-    style = "slidevert"
+    style = "slide"
 })
 -- specialWorkspace
 hl.animation({

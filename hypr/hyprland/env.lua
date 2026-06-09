@@ -12,6 +12,7 @@ hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 -- 2. Wayland & Compositor Tweaks
 -- ==========================================
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("ELECTRON_ENABLE_WAYLAND_CURSOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb") -- Prefer Wayland, fallback to XCB
 hl.env("QT_QPA_PLATFORMTHEME", "kde")    -- Use KDE integration for Qt apps
 

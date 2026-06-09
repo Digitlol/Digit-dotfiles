@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-MONITOR="DP-6"
-CURSOR_X=3200
+MONITOR="DP-3"
+CURSOR_X=1280
 CURSOR_Y=720
 
 sleep 0.2
