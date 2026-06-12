@@ -21,20 +21,6 @@ hl.gesture({
     direction = "horizontal",
     action = "workspace"
 })
-hl.gesture({
-    fingers = 4,
-    direction = "up",
-    action = function()
-        hl.dispatch(hl.dsp.global("quickshell:overviewWorkspacesToggle"))
-    end
-})
-hl.gesture({
-    fingers = 4,
-    direction = "down",
-    action = function()
-        hl.dispatch(hl.dsp.global("quickshell:overviewWorkspacesToggle"))
-    end
-})
 
 hl.config({
     gestures = {
@@ -48,15 +34,8 @@ hl.config({
     general = {
         -- Gaps and border
         gaps_in = 4,
-        gaps_out = 30,
-        gaps_workspaces = 50,
+        gaps_out = 15,
 
-        border_size = 3,
-
-        col = {
-            active_border = "rgba(0DB7D455)",
-            inactive_border = "rgba(31313600)"
-        },
         resize_on_border = true,
 
         no_focus_fallback = true,
@@ -71,38 +50,31 @@ hl.config({
     decoration = {
         -- 2 = circle, higher = squircle, 4 = very obvious squircle
         -- Fuck clearly visible squircles. 100% Apple brainrot.
-        rounding_power = 2.5,
-        rounding = 8,
+        rounding_power = 2,
+        rounding = 15,
 
         blur = {
             enabled = true,
-            xray = true,
-            special = false,
+            xray = false,
             new_optimizations = true,
-            size = 8,
+            size = 3,
             passes = 2,
             brightness = 1,
             noise = 0.05,
             contrast = 0.89,
-            vibrancy = 0.5,
+            vibrancy = 0.1696,
             vibrancy_darkness = 0.5,
-            popups = false,
+            popups = true,
             popups_ignorealpha = 0.6,
             input_methods = true,
             input_methods_ignorealpha = 0.8
         },
         shadow = {
             enabled = true,
-            range = 20,
-            offset = { 0, 2 },
-            render_power = 10,
-            color = "rgba(00000020)"
-
+            range = 4,
+            render_power = 3,
+            color = 0xee1a1a1a,
         },
-        -- Dim
-        dim_inactive = true,
-        dim_strength = 0.05,
-        dim_special = 0.2
     },
     animations = {
         enabled = true

@@ -15,7 +15,6 @@ end
 require("hyprland.execs")
 require("hyprland.general")
 require("hyprland.rules")
-require("hyprland.colors")
 require("hyprland.keybinds")
 
 -- Custom configurations --
@@ -37,5 +36,5 @@ if is_file_exists(HOME .. "/.config/hypr/monitors.lua") then
     require("monitors")
 end
 
--- Shell overrides --
-require("hyprland.shellOverrides.main")
+-- For Noctalia Color templates
+require("noctalia")

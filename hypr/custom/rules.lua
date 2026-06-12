@@ -12,7 +12,7 @@ hl.window_rule({
 
 -- Discord Workspace
 hl.window_rule({
-    match = { initial_class = "^(Discord|discord)$" },
+    match = { initial_class = "^(Vesktop|vesktop)$" },
     workspace = "special:communication silent",
     opacity = 0.95,
     no_initial_focus = true,
@@ -98,7 +98,7 @@ hl.window_rule({
     match = { class = "^(chrome-nngceckbapebfimnlniiiahkandclblb-Profile_2)$" },
     float = true,
     center = true,
-    size = { "(monitor_w*0.20)", "(monitor_h*0.50)" },
+    size = { "(monitor_w*0.25)", "(monitor_h*0.50)" },
     opacity = 0.90,
     no_blur = false
 })
@@ -107,7 +107,7 @@ hl.window_rule({
     match = { class = "^(brave-nngceckbapebfimnlniiiahkandclblb-Profile_1)$" },
     float = true,
     center = true,
-    size = { "(monitor_w*0.20)", "(monitor_h*0.50)" },
+    size = { "(monitor_w*0.25)", "(monitor_h*0.50)" },
     opacity = 0.90,
     no_blur = false
 })
@@ -167,6 +167,18 @@ hl.window_rule({
     opacity = 0.95
 })
 
+
 -- Assigning monitors
-hl.workspace_rule({ workspace = "8", monitor = "DP-2", default=true})
+hl.workspace_rule({ workspace = "1", monitor = "DP-3", persistent = true })
+hl.workspace_rule({ workspace = "2", monitor = "DP-3", persistent = true })
+hl.workspace_rule({ workspace = "3", monitor = "DP-3", persistent = true })
+hl.workspace_rule({ workspace = "4", monitor = "DP-3", persistent = true })
+hl.workspace_rule({ workspace = "5", monitor = "DP-3", persistent = true })
+hl.workspace_rule({ workspace = "6", monitor = "DP-2", persistent = true })
+hl.workspace_rule({ workspace = "7", monitor = "DP-2", persistent = true })
+hl.workspace_rule({ workspace = "8", monitor = "DP-2", persistent = true })
+hl.workspace_rule({ workspace = "9", monitor = "DP-2", persistent = true })
+hl.workspace_rule({ workspace = "10", monitor = "DP-2", persistent = true })
+
 hl.workspace_rule({ workspace = "1", monitor = "DP-3", default=true})
+hl.workspace_rule({ workspace = "6", monitor = "DP-2", default=true})

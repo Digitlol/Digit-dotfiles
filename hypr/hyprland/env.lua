@@ -23,14 +23,6 @@ local xdg_data_dirs_old = os.getenv("XDG_DATA_DIRS") or ""
 hl.env("XDG_DATA_DIRS", home_dir .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:" .. xdg_data_dirs_old)
 hl.env("XDG_MENU_PREFIX", "plasma-") -- Use Plasma menu prefix for shortcuts
 
--- GTK Theme (Added back from your custom conf)
-hl.env("GTK_THEME", "adw-gtk3-dark")
-
--- ==========================================
--- 4. Virtual Environment
--- ==========================================
-hl.env("ILLOGICAL_IMPULSE_VIRTUAL_ENV", home_dir .. "/.local/state/quickshell/.venv")
-
 -- ==========================================
 -- 5. Portal Fixes
 -- ==========================================

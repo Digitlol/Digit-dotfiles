@@ -1,88 +1,109 @@
 <div align="center">
-    <h1>✦ Digit’s Hyprland Dotfiles ✦</h1>
-    <h3>Custom Hyprland setup • Quickshell-driven • Daily-use focused</h3>
+  <h1>Digit’s Hyprland Dotfiles</h1>
+  <p><b>Hyprland • Noctalia v5 • Personal desktop environment</b></p>
 </div>
 
-<div align="center">
-    <h2>⟡ Overview ⟡</h2>
-</div>
+---
 
-A personal Hyprland configuration forked from End_4’s dotfiles, modified for my own workflow, UI preferences, and daily use.
+## Overview
+
+A personal Hyprland configuration built around **Noctalia v5**, designed for daily use, workflow efficiency, and a clean modular desktop experience.
 
 <details>
-<summary><b>⟡ What this is ⟡</b></summary>
+<summary><b>What is this?</b></summary>
 
-This is a customised Hyprland dotfile setup built on top of End_4’s work.
+This is a fully custom Hyprland setup focused on usability, consistency, and performance rather than being a full Linux distribution or installer.
 
-- Config-based desktop environment (not a full system installer)
-- Heavily centered around Quickshell for UI and shell components
-- Designed for usability, consistency, and daily workflow
-- Optional Waypaper integration for wallpaper management
-- Personal tweaks layered on top of upstream structure
-- Moved from Hyprlang -> Lua via the lua-main branch
+- Built around **Noctalia v5** as the core shell/UI layer  
+- Workflow-first desktop configuration  
+- Clean separation between compositor, shell, and applications  
+- Lightweight and fast with minimal overhead  
+- Fully custom configuration and structure  
 
 References:
-- Wiki: https://ii.clsty.link/en/
-- DeepWiki: https://deepwiki.com/end-4/dots-hyprland
-- Original End-4 repo: https://github.com/end-4/dots-hyprland
+- Noctalia Docs: https://docs.noctalia.dev/
+- Hyprland Docs: https://wiki.hypr.land/
 
 </details>
 
 <details>
-<summary><b>⟡ Notable features ⟡</b></summary>
+<summary><b>Features</b></summary>
 
-- Workspace overview → live app previews and window tracking
-- AI integration → Gemini, Ollama, and extensible backends
-- Quality-of-life tools → screen translation, anti-flashbang, Google Lens shortcuts
-- Material-style theming → wallpaper switching with consistent UI theming
-- Transparent install process → commands shown before execution
-- Optional Waypaper mode → disabled by default
+- Workspace system with live window tracking  
+- Noctalia v5 shell (panels, widgets, system controls, theming)  
+- Productivity tooling (screen tools, shortcuts, quick actions)  
+- Fast config reload workflow (Hyprland + shell separation)  
+- Minimal, consistent UI design  
+- Fully Lua-based Hyprland config  
 
 </details>
 
 <details>
-<summary><b>⟡ Installation & keybinds ⟡</b></summary>
+<summary><b>Installation</b></summary>
 
-⚠️ If your distro has not yet shipped Hyprland 0.55, check the wiki before installing.
+⚠️ Requires Hyprland 0.55+ (Lua config)
 
-- End-4 Quick install:
-  - Run `bash <(curl -s https://ii.clsty.link/get)`
+### Base system
+Install Hyprland using your distro’s package manager or official documentation.
 
-- End-4 Manual install:
-  - Run `git clone https://github.com/end-4/dots-hyprland`
-  - Run `cd dots-hyprland`
-  - Run `./setup install`
+### Dotfiles
 
-- My Tweaks Manual install:
-  - Run `git clone https://github.com/Digitlol/Digit-dotfiles`
-  - Extract & move each folder into `~/.config` manually
+```bash
+git clone https://github.com/Digitlol/Digit-dotfiles
+cd Digit-dotfiles
+```
 
-Keybinds:
-- `Super`+`/` = keybind list
-- `Super`+`Enter` = terminal
-- `Super`+`C` = Discord auto launch + workspace
-- `Super`+`X` = Spotify workspace (The application is launched at startup)
-- `Super`+`S` = Slack workspace
-- `Super`+`Z` = Zeditor
-- `Super`+`A` = Gnome Clocks
-- `Super`+`W` = Brave
-- `Super`+`Shift`+`W` = Brave work
-- `Ctrl`+`Shift`+`Escape` = Kitty w/ Btop
+Copy configuration folders into:
+
+```bash
+~/.config
+```
 
 </details>
 
-<div align="center">
-    <h2>⟡ Stack ⟡</h2>
-</div>
+<details>
+<summary><b>Keybinds (Noctalia v5)</b></summary>
 
-- Hyprland → Wayland compositor
-- Quickshell → UI / shell system (core of this setup)
-- Supporting tools → see End-4's dependency list
+### Core
+- `Super` → Launcher  
+- `MainMod + N` → Control Center  
+- `Ctrl + Alt + Delete` → Session menu  
+- `Ctrl + Super + T` → Wallpaper panel  
+- `Super + V` → Clipboard  
 
-<div align="center">
-    <h2>⟡ Demo ⟡</h2>
-</div>
+### System
+- `MainMod + I` → Settings  
+- `MainMod + L` → Lock session  
+- `MainMod + Shift + L` → Suspend system  
 
-<div align="center">
-    ✦ <a href="https://www.youtube.com/watch?v=e2odl_kQdSU">Watch showcase video</a> ✦
-</div>
+### Tools
+- `MainMod + Shift + S` → Screenshot selection  
+
+### Reload
+- `Ctrl + Super + R` → Restart Noctalia + reload Hyprland  
+
+</details>
+
+---
+
+## Stack
+
+- **Hyprland** → Wayland compositor  
+- **Noctalia v5** → Shell + UI system (core layer)  
+- **System tools** → Utilities, launchers, and workflow applications  
+
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="./screenshots/2026-06-12.png" width="900" />
+</p>
+
+---
+
+## Notes
+
+- This is a personal configuration, not a distribution  
+- Expect frequent changes as workflow evolves  
+- Designed for speed, clarity, and daily usability
