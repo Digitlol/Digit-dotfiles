@@ -24,14 +24,14 @@ hl.env("XDG_DATA_DIRS", home_dir .. "/.local/share/flatpak/exports/share:/var/li
 hl.env("XDG_MENU_PREFIX", "plasma-") -- Use Plasma menu prefix for shortcuts
 
 -- ==========================================
--- 5. Portal Fixes
+-- 4. Portal Fixes
 -- ==========================================
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- ==========================================
--- 6. Cursor Fixes
+-- 5. Cursor Fixes
 -- ==========================================
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")

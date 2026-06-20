@@ -17,15 +17,14 @@ local ipc = "noctalia msg"
 -- hl.bind("SUPER + ALT + A", hl.dsp.global("quickshell:sidebarLeftToggleDetach"))
 
 --##! Utilities
---# Screenshot, Record, OCR, Color picker, Clipboard history
-hl.bind("SUPER + Period", hl.dsp.exec_cmd(
-        qsIsAlive .. " || pkill fuzzel || " .. hyprScripts .. "/fuzzel-emoji.sh copy"),
-    { description = "Utilities: Emoji >> clipboard" })
+--# Screenshot, Record, OCR, Color picker
+hl.bind("SUPER + Period", hl.dsp.exec_cmd("emote"))
 hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(qsIsAlive .. " || pidof slurp || " .. hyprScripts .. "/snip_to_search.sh"))
 
 --# Color picker
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"),
     { description = "Utilities: Pick color #RRGGBB >> clipboard" })
+
 --# Recording stuff
 --hl.bind("SUPER + SHIFT + R", hl.dsp.global("quickshell:regionRecord"),
 --    { locked = true, description = "Utilities: Record region (no sound)" })
@@ -261,18 +260,28 @@ hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "ex
 
 
 -- Noctalia Specific
+
+-- Core
 hl.bind(mainMod .. "+SUPER_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"), { release = true })
-hl.bind(mainMod .. "+N", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center"))
+
+hl.bind(mainMod .. "+N", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center home"))
+hl.bind("SUPER + M", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center media"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center calendar"))
+
 hl.bind("CTRL+ALT+DELETE", hl.dsp.exec_cmd(ipc .. " panel-toggle session"))
 hl.bind("CTRL + SUPER + T", hl.dsp.exec_cmd(ipc .. " panel-toggle wallpaper"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"))
---hl.bind("SUPER + M", hl.dsp.exec_cmd(ipc .. " panel-toggle media"))
---hl.bind("SUPER + B", hl.dsp.exec_cmd(ipc .. " panel-toggle calendar"))
+
+
+-- System
 hl.bind(mainMod .. "+I", hl.dsp.exec_cmd(ipc .. " settings-toggle"))
 hl.bind(mainMod .. "+L", hl.dsp.exec_cmd(ipc .. " session lock"))
 hl.bind(mainMod .. "+SHIFT+L", hl.dsp.exec_cmd(ipc .. " session suspend"))
+
+-- Tools
 hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"))
 
+-- Reload
 hl.bind(
     "CTRL + SUPER + R",
     hl.dsp.exec_cmd("pkill -x noctalia; sleep 0.2; noctalia & disown && hyprctl reload"),

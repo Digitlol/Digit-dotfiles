@@ -12,7 +12,7 @@ hl.window_rule({
 
 -- Discord Workspace
 hl.window_rule({
-    match = { initial_class = "^(Vesktop|vesktop)$" },
+    match = { initial_class = "^(Discord|discord)$" },
     workspace = "special:communication silent",
     opacity = 0.95,
     no_initial_focus = true,
@@ -24,7 +24,7 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "^(slack)$" },
     workspace = "special:slack silent",
-    opacity = 0.90,
+    opacity = 1,
     no_initial_focus = true,
     focus_on_activate = false,
     no_blur = true,
@@ -150,12 +150,12 @@ hl.window_rule({
 -- Quo Web PWA
 hl.window_rule({
     match = { initial_title = "^(quo|Quo)$" },
-    opacity = 0.90
+    opacity = 0.95
 })
 
 -- WhatsApp Web PWA
 hl.window_rule({
-    match = { initial_title = "^(WhatsApp Web|whatsapp web)$" },
+    match = { initial_class = "^(com.rtosta.zapzap)$" },
     opacity = 0.90,
     no_initial_focus = true,
     focus_on_activate = false,
@@ -174,6 +174,7 @@ hl.workspace_rule({ workspace = "2", monitor = "DP-3", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "DP-3", persistent = true })
 hl.workspace_rule({ workspace = "4", monitor = "DP-3", persistent = true })
 hl.workspace_rule({ workspace = "5", monitor = "DP-3", persistent = true })
+
 hl.workspace_rule({ workspace = "6", monitor = "DP-2", persistent = true })
 hl.workspace_rule({ workspace = "7", monitor = "DP-2", persistent = true })
 hl.workspace_rule({ workspace = "8", monitor = "DP-2", persistent = true })

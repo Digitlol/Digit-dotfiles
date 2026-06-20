@@ -105,7 +105,7 @@ hl.workspace_rule({ workspace = "special:special", gaps_out = 30 })
 -- Launchers need to be FAST
 --hl.layer_rule({ match = { namespace = "gtk4-layer-shell" }, no_anim = true })
 
--- Noctalia Shell
+--#!! Noctalia Shell
 hl.layer_rule({
   name = "noctalia",
   match = {
@@ -114,4 +114,12 @@ hl.layer_rule({
     ignore_alpha = 0.5,
   blur = true,
   blur_popups = true,
+})
+
+hl.window_rule({
+    match = { initial_class = "^(dev.noctalia.Noctalia.Settings$)" },
+    float = true,
+    center = true,
+    size = { "(monitor_w*0.60)", "(monitor_h*0.75)" },
+    opacity = 0.90
 })
