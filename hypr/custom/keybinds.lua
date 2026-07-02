@@ -39,3 +39,32 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl --player=spotify next"), { l
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl --player=spotify previous"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl --player=spotify play-pause"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl --player=spotify play-pause"), { locked = true })
+
+--# Game mode
+hl.bind("SUPER + P", function ()
+    local game_mode = (hl.get_config("animations.enabled") == false)
+
+    if game_mode then
+        hl.exec_cmd("hyprctl reload")
+        return
+    end
+
+    hl.config({
+        general = {
+            gaps_in = 0, gaps_out = 0, -- Disable gaps
+            border_size = 0,
+        },
+
+        animations = {
+            enabled = false, -- Disable animations
+        },
+
+        -- Disable blur, shadow and window rounding
+        decoration = {
+            shadow = { enabled = false },
+            blur = { enabled = false },
+            rounding = 0,
+        }
+    })
+    hl.window_rule({ match = { class = ".*" }, no_blur = true, opacity = 1 })
+end)

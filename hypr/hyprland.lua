@@ -37,4 +37,4 @@ if is_file_exists(HOME .. "/.config/hypr/monitors.lua") then
 end
 
 -- For Noctalia Color templates
-require("noctalia")
+require("noctalia").apply_theme()

@@ -76,6 +76,7 @@ hl.window_rule({
     no_blur = true,
     no_initial_focus = true,
     focus_on_activate = false,
+    workspace = "1"
 })
 
 -- Kitty
@@ -134,11 +135,11 @@ hl.window_rule({
 -- Superhuman Web PWA
 hl.window_rule({
     match = { title = "^(Superhuman|superhuman)$" },
-    opacity = 0.90
+    opacity = 1
 })
 hl.window_rule({
     match = { initial_title = "^(Superhuman|superhuman)$" },
-    opacity = 0.90
+    opacity = 1
 })
 
 -- Dolphin (To stop lag when using Dolphin drag select)
@@ -167,19 +168,17 @@ hl.window_rule({
     opacity = 0.95
 })
 
+--#!Assigning monitors
 
--- Assigning monitors
-hl.workspace_rule({ workspace = "1", monitor = "DP-3", persistent = true })
+-- 1440p Display
+hl.workspace_rule({ workspace = "1", monitor = "DP-3", persistent = true, default = true })
 hl.workspace_rule({ workspace = "2", monitor = "DP-3", persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = "DP-3", persistent = true })
 hl.workspace_rule({ workspace = "4", monitor = "DP-3", persistent = true })
 hl.workspace_rule({ workspace = "5", monitor = "DP-3", persistent = true })
-
-hl.workspace_rule({ workspace = "6", monitor = "DP-2", persistent = true })
+--1080p Display
+hl.workspace_rule({ workspace = "6", monitor = "DP-2", persistent = true, default = true })
 hl.workspace_rule({ workspace = "7", monitor = "DP-2", persistent = true })
 hl.workspace_rule({ workspace = "8", monitor = "DP-2", persistent = true })
 hl.workspace_rule({ workspace = "9", monitor = "DP-2", persistent = true })
 hl.workspace_rule({ workspace = "10", monitor = "DP-2", persistent = true })
-
-hl.workspace_rule({ workspace = "1", monitor = "DP-3", default=true})
-hl.workspace_rule({ workspace = "6", monitor = "DP-2", default=true})

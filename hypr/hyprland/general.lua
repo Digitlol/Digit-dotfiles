@@ -1,11 +1,3 @@
--- MONITOR CONFIG
---hl.monitor({
---    output = "",
---    mode = "preferred",
---    position = "auto",
---    scale = "1"
---})
-
 hl.gesture({
     fingers = 3,
     direction = "swipe",
@@ -72,7 +64,7 @@ hl.config({
         shadow = {
             enabled = true,
             range = 4,
-            render_power = 3,
+            render_power = 2,
             color = 0xee1a1a1a,
         },
     },
@@ -161,7 +153,7 @@ hl.animation({
 hl.animation({
     leaf = "border",
     enabled = true,
-    speed = 10,
+    speed = 7,
     bezier = "emphasizedDecel"
 })
 

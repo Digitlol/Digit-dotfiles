@@ -280,7 +280,7 @@ hl.bind(mainMod .. "+SHIFT+L", hl.dsp.exec_cmd(ipc .. " session suspend"))
 
 -- Tools
 hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"))
-
+hl.bind(mainMod .. "+SHIFT+R", hl.dsp.exec_cmd("noctalia msg plugin noctalia/screen_recorder:service all toggle"))
 -- Reload
 hl.bind(
     "CTRL + SUPER + R",
