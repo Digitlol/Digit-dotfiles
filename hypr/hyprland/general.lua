@@ -26,8 +26,8 @@ hl.config({
     general = {
         -- Gaps and border
         gaps_in = 4,
-        gaps_out = 15,
-
+        gaps_out = 30,
+        border_size = 1,
         resize_on_border = true,
 
         no_focus_fallback = true,
@@ -42,7 +42,7 @@ hl.config({
     decoration = {
         -- 2 = circle, higher = squircle, 4 = very obvious squircle
         -- Fuck clearly visible squircles. 100% Apple brainrot.
-        rounding_power = 2,
+        rounding_power = 0,
         rounding = 15,
 
         blur = {
@@ -248,12 +248,13 @@ hl.config({
         allow_session_lock_restore = true,
         session_lock_xray = true,
         initial_workspace_tracking = false,
-        focus_on_activate = true
+        focus_on_activate = true,
+        middle_click_paste = false,
     },
 
     binds = {
         scroll_event_delay = 0,
-        hide_special_on_workspace_change = true
+        hide_special_on_workspace_change = true,
     },
 
     cursor = {

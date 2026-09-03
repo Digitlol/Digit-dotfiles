@@ -5,10 +5,7 @@ if is_file_exists(HOME .. "/.config/hypr/custom/variables.lua") then
     require("custom.variables")
 end
 
-local qsScripts = "$HOME/.config/quickshell/$qsConfig/scripts"
 local hyprScripts = "$HOME/.config/hypr/hyprland/scripts"
-local qsIpcCall = "qs -c $qsConfig ipc call"
-local qsIsAlive = qsIpcCall .. " TEST_ALIVE"
 local mainMod = "SUPER"
 local ipc = "noctalia msg"
 
@@ -19,7 +16,7 @@ local ipc = "noctalia msg"
 --##! Utilities
 --# Screenshot, Record, OCR, Color picker
 hl.bind("SUPER + Period", hl.dsp.exec_cmd("emote"))
-hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(qsIsAlive .. " || pidof slurp || " .. hyprScripts .. "/snip_to_search.sh"))
+hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(hyprScripts .. "/snip_to_search.sh"))
 
 --# Color picker
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"),
@@ -65,7 +62,7 @@ hl.bind("SUPER + code:82", function() zoomfunction(-0.3) end, { repeating = true
 hl.bind("SUPER + code:86", function() zoomfunction(0.3) end, { repeating = true })
 
 --##! Media
-local mediaNextCommand =
+--local mediaNextCommand =
 -- "playerctl next || playerctl position `bc <<< \"100 * $(playerctl metadata mpris:length) / 1000000 / 100\"`"
 --hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd(mediaNextCommand), { locked = true, description = "Misc: Next track" })
 --hl.bind("XF86AudioNext", hl.dsp.exec_cmd(mediaNextCommand), { locked = true })
@@ -158,14 +155,14 @@ end
 for i = 1, 4 do
     local key = { "SUPER + SHIFT + mouse_", "SUPER + ALT + mouse_" }
     local keycombos = { key[1] .. "down", key[1] .. "up", key[2] .. "down", key[2] .. "up" }
-    local prefix = { "r-", "r+", "r-", "r+" }
+    local prefix = { "r+", "r-", "r+", "r-" }
     hl.bind(keycombos[i], hl.dsp.window.move({ workspace = prefix[i] .. "1" }))
 end
 
 --#/# bind = SUPER+SHIFT, Page_↑/↓,, -- Send to workspace left/right
 for i = 1, 2 do
     local keydirs = { "Up", "Down" }
-    local prefix = { "r-", "r+" }
+    local prefix = { "r+", "r-" }
     local descdir = { "left", "right" }
     hl.bind("SUPER + SHIFT + Page_" .. keydirs[i], hl.dsp.window.move({ workspace = prefix[i] .. "1" }), {description = "Window: Send to workspace " .. descdir[i]})
 end
@@ -207,7 +204,7 @@ end
 --#/# bind = CTRL+SUPER+ALT, ←/→,, -- # [hidden] Focus busy left/right
 for i = 1, 2 do
     local keys = { "Left", "Right" }
-    local prefix = { "r-", "r+" }
+    local prefix = { "m-", "m+" }
     local descdir = { "left", "right" }
     hl.bind("CTRL + SUPER + " .. keys[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }), {description = "Workspace: Focus " .. descdir[i]})
 end
@@ -227,7 +224,7 @@ end
 for i = 1, 4 do
     local key = { "SUPER + mouse_up", "SUPER + mouse_down" }
     local keycombos = { key[1], key[2], "CTRL + " .. key[1], "CTRL + " .. key[2] }
-    local prefix = { "+", "-", "r+", "r-" }
+    local prefix = { "m-", "m+", "r+", "r-" }
     hl.bind(keycombos[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
 end
 --## Special
@@ -265,13 +262,13 @@ hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "ex
 hl.bind(mainMod .. "+SUPER_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"), { release = true })
 
 hl.bind(mainMod .. "+N", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center home"))
-hl.bind("SUPER + M", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center media"))
-hl.bind("SUPER + B", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center calendar"))
+hl.bind(mainMod .. "+M", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center media"))
+hl.bind(mainMod .. "+B", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center calendar"))
 
 hl.bind("CTRL+ALT+DELETE", hl.dsp.exec_cmd(ipc .. " panel-toggle session"))
 hl.bind("CTRL + SUPER + T", hl.dsp.exec_cmd(ipc .. " panel-toggle wallpaper"))
-hl.bind("SUPER + V", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"))
-
+hl.bind("SHIFT + SUPER + T", hl.dsp.exec_cmd(ipc .. " panel-toggle tadomika_ari/w-engine:w-engine-panel"))
+hl.bind(mainMod .. "+V", hl.dsp.exec_cmd(ipc .. " panel-toggle clipboard"))
 
 -- System
 hl.bind(mainMod .. "+I", hl.dsp.exec_cmd(ipc .. " settings-toggle"))
@@ -279,7 +276,8 @@ hl.bind(mainMod .. "+L", hl.dsp.exec_cmd(ipc .. " session lock"))
 hl.bind(mainMod .. "+SHIFT+L", hl.dsp.exec_cmd(ipc .. " session suspend"))
 
 -- Tools
-hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"))
+--hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"))
+hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd(ipc .. " screenshot-region"))
 hl.bind(mainMod .. "+SHIFT+R", hl.dsp.exec_cmd("noctalia msg plugin noctalia/screen_recorder:service all toggle"))
 -- Reload
 hl.bind(
@@ -289,7 +287,7 @@ hl.bind(
 )
 
 -- Media keys
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1"),
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ -l 1.25"),
     { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
     { locked = true, repeating = true })

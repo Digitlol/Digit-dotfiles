@@ -7,11 +7,12 @@ local home_dir = os.getenv("HOME")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("GBM_BACKEND", "nvidia-drm")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("NVD_BACKEND", "direct")
 
 -- ==========================================
 -- 2. Wayland & Compositor Tweaks
 -- ==========================================
-hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("ELECTRON_ENABLE_WAYLAND_CURSOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb") -- Prefer Wayland, fallback to XCB
 hl.env("QT_QPA_PLATFORMTHEME", "kde")    -- Use KDE integration for Qt apps
@@ -34,6 +35,6 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 -- 5. Cursor Fixes
 -- ==========================================
 hl.env("XCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice")

@@ -111,13 +111,14 @@ hl.layer_rule({
   match = {
     namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd)$",
   },
-    ignore_alpha = 0.5,
+  no_anim = true,
+  ignore_alpha = 0.5,
   blur = true,
   blur_popups = true,
 })
 
 hl.window_rule({
-    match = { initial_class = "^(dev.noctalia.Noctalia.Settings$)" },
+    match = { initial_title = "^(Noctalia Settings$)" },
     float = true,
     center = true,
     size = { "(monitor_w*0.60)", "(monitor_h*0.75)" },

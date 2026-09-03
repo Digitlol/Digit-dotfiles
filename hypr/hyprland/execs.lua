@@ -16,5 +16,5 @@ hl.on("hyprland.start", function()
     -- ==========================================
     -- 3. Cursor Theme
     -- ==========================================
-    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
 end)

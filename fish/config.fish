@@ -20,9 +20,12 @@ if status is-interactive
     alias pamcan pacman
     alias q 'qs -c ii'
     if test "$TERM" != "linux"
-        alias ls 'eza --icons'
+        alias ls 'eza --icons=always'
     end
     if test "$TERM" = "xterm-kitty"
         alias ssh 'kitten ssh'
     end
 end
+
+# Created by `pipx` on 2026-08-07 14:09:48
+set PATH $PATH /home/digit/.local/bin

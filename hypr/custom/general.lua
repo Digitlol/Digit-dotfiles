@@ -7,6 +7,6 @@ hl.config({
     },
     cursor = {
         sync_gsettings_theme = true,
-        no_hardware_cursors = false,
+        no_hardware_cursors = true,
     }
 })

@@ -68,3 +68,6 @@ hl.bind("SUPER + P", function ()
     })
     hl.window_rule({ match = { class = ".*" }, no_blur = true, opacity = 1 })
 end)
+hl.bind("SUPER + O", hl.dsp.exec_cmd("noctalia msg panel-toggle nomadcxx/gamer-mode:main"), {
+    description = "Noctalia:Game Mode"
+})
