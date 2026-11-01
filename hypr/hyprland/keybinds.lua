@@ -8,6 +8,7 @@ end
 local hyprScripts = "$HOME/.config/hypr/hyprland/scripts"
 local mainMod = "SUPER"
 local ipc = "noctalia msg"
+local launcherScript = "$HOME/.config/hypr/custom/scripts/noctalia-launcher.sh"
 
 -- hl.bind("SUPER + Tab", hl.dsp.global("quickshell:overviewWorkspacesToggle"), { description = "Shell: Toggle overview" })
 -- hl.bind("SUPER + A", hl.dsp.global("quickshell:sidebarLeftToggle"), { description = "Shell: Toggle left sidebar" })
@@ -218,7 +219,12 @@ for i = 1, 4 do
     local key = { "SUPER + mouse_up", "SUPER + mouse_down" }
     local keycombos = { key[1], key[2], "CTRL + " .. key[1], "CTRL + " .. key[2] }
     local prefix = { "m-", "m+", "r-", "r+" }
-    hl.bind(keycombos[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
+    local combo = keycombos[i]
+    local workspace = prefix[i] .. "1"
+    hl.bind(combo, function()
+        hl.dispatch(hl.dsp.exec_cmd(launcherScript .. " interrupt"))
+        hl.dispatch(hl.dsp.focus({ workspace = workspace }))
+    end)
 end
 
 --## Special
@@ -254,7 +260,8 @@ hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "ex
 -- Noctalia Specific
 
 -- Core
-hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"), { release = true })
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(launcherScript .. " press"))
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(launcherScript .. " release"), { release = true })
 
 hl.bind(mainMod .. "+N", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center home"))
 -- hl.bind(mainMod .. "+M", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center media"))
