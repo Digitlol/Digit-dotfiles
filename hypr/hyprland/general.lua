@@ -27,7 +27,7 @@ hl.config({
         -- Gaps and border
         gaps_in = 4,
         gaps_out = 30,
-        border_size = 1,
+        border_size = 0,
         resize_on_border = true,
 
         no_focus_fallback = true,
@@ -42,12 +42,12 @@ hl.config({
     decoration = {
         -- 2 = circle, higher = squircle, 4 = very obvious squircle
         -- Fuck clearly visible squircles. 100% Apple brainrot.
-        rounding_power = 0,
+        rounding_power = 2,
         rounding = 15,
 
         blur = {
             enabled = true,
-            xray = false,
+            xray = true,
             new_optimizations = true,
             size = 3,
             passes = 2,
@@ -64,18 +64,16 @@ hl.config({
         shadow = {
             enabled = true,
             range = 4,
-            render_power = 2,
+            render_power = 3,
             color = 0xee1a1a1a,
         },
+        -- Dim
+        dim_inactive = true,
+        dim_strength = 0.05,
+        dim_special = 0.2
     },
     animations = {
         enabled = true
-    },
-    dwindle = {
-        preserve_split = true,
-        smart_split = false,
-        smart_resizing = false
-        -- precise_mouse_move = true,
     },
 })
 -- Curves

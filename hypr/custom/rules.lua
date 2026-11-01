@@ -7,18 +7,19 @@ hl.window_rule({
     opacity = 0.9,
     no_initial_focus = true,
     focus_on_activate = false,
-    no_blur = true
+    no_blur = false,
 })
 
 -- Discord Workspace
 hl.window_rule({
     match = { initial_class = "^(Discord|discord)$" },
     workspace = "special:communication silent",
-    opacity = 0.95,
+    opacity = 0.9,
     no_initial_focus = true,
     focus_on_activate = false,
-    no_blur = true,
-    no_screen_share = true,
+    no_blur = false,
+    no_screen_share = false,
+    xray = true,
 })
 
 -- Slack Workspace
@@ -83,7 +84,7 @@ hl.window_rule({
 -- Kitty
 hl.window_rule({
     match = { class = "^(Kitty|kitty)$" },
-    opacity = 0.9
+    opacity = 0.9,
 })
 
 -- Discord RPC
@@ -197,13 +198,21 @@ hl.workspace_rule({ workspace = "2", monitor = "desc:AOC Q27G4_D 1T0R7HA007040",
 hl.workspace_rule({ workspace = "3", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
 hl.workspace_rule({ workspace = "4", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
 hl.workspace_rule({ workspace = "5", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
+hl.workspace_rule({ workspace = "6", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
+hl.workspace_rule({ workspace = "7", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
+hl.workspace_rule({ workspace = "8", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
+hl.workspace_rule({ workspace = "9", monitor = "desc:AOC Q27G4_D 1T0R7HA007040", persistent = true, default = true })
 
 --1080p Display
-hl.workspace_rule({ workspace = "6", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
-hl.workspace_rule({ workspace = "7", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
-hl.workspace_rule({ workspace = "8", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
-hl.workspace_rule({ workspace = "9", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
 hl.workspace_rule({ workspace = "10", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "11", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "12", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "13", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "14", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "15", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "16", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "17", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
+hl.workspace_rule({ workspace = "18", monitor = "desc:AOC G2460PG #ASOkEZB9ChHd", persistent = true, default = true })
 
 
 -- Games on Primary monitor

@@ -185,20 +185,6 @@ for i = 1, 10 do
         hl.dispatch(hl.dsp.focus({ workspace = workspace_in_group(i) }))
     end, { description = "Workspace: Focus " .. i })
 end
---# We also use raw keycodes because some keyboard layouts register number keys as different chars. The codes can be verified with `wev`
-for i = 1, 10 do
-    local numberkey = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 }
-    hl.bind("SUPER + code:" .. numberkey[i], function()
-        hl.dispatch(hl.dsp.focus({ workspace = workspace_in_group(i) }))
-    end)
-end
---# keypad numbers
-for i = 1, 10 do
-    local numpadkey = { 87, 88, 89, 83, 84, 85, 79, 80, 81, 90 }
-    hl.bind("SUPER + code:" .. numpadkey[i], function()
-        hl.dispatch(hl.dsp.focus({ workspace = workspace_in_group(i) }))
-    end)
-end
 
 --#/# bind = CTRL+SUPER, ←/→,, -- Focus left/right
 --#/# bind = CTRL+SUPER+ALT, ←/→,, -- # [hidden] Focus busy left/right
@@ -214,19 +200,27 @@ for i = 1, 2 do
     hl.bind("CTRL + SUPER + ALT + " .. keys[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
 end
 --#/# bind = SUPER, Page_↑/↓,, -- Focus left/right
-for i = 1, 4 do
+for i = 1, 2 do
     local key = { "SUPER + Page_Down", "SUPER + Page_Up" }
-    local keycombos = { key[1], key[2], "CTRL + " .. key[1], "CTRL + " .. key[2] }
-    local prefix = { "r+", "r-", "r+", "r-" }
+    local keycombos = { key[1], key[2]}
+    local prefix = { "r+", "r-" }
     hl.bind(keycombos[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
 end
 --#/# bind = SUPER, Scroll ↑/↓,, -- Focus left/right
+--for i = 1, 2 do
+--    local key = { "CTRL + SUPER + mouse_up", "CTRL + SUPER + mouse_down" }
+--    local prefix = { "r-", "r+" }
+--    hl.bind(key[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
+--end
+
+-- SAVE FOR WHEN FIXED
 for i = 1, 4 do
     local key = { "SUPER + mouse_up", "SUPER + mouse_down" }
     local keycombos = { key[1], key[2], "CTRL + " .. key[1], "CTRL + " .. key[2] }
-    local prefix = { "m-", "m+", "r+", "r-" }
+    local prefix = { "m-", "m+", "r-", "r+" }
     hl.bind(keycombos[i], hl.dsp.focus({ workspace = prefix[i] .. "1" }))
 end
+
 --## Special
 --hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("special"), { description = "Workspace: Toggle scratchpad" })
 --hl.bind("SUPER + mouse:275", hl.dsp.workspace.toggle_special("special"))
@@ -243,6 +237,7 @@ end
 hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal), { description = "App: Terminal" })
 hl.bind("SUPER + T", hl.dsp.exec_cmd(terminal))
 hl.bind("CTRL + ALT + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. "+M", hl.dsp.exec_cmd(mail))
 hl.bind("SUPER + E", hl.dsp.exec_cmd(fileManager), { description = "App: File manager" })
 -- hl.bind("SUPER + W", hl.dsp.exec_cmd(browser), { description = "App: Browser" })
 hl.bind("SUPER + Z", hl.dsp.exec_cmd(codeEditor), { description = "App: Code editor" })
@@ -259,10 +254,10 @@ hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "ex
 -- Noctalia Specific
 
 -- Core
-hl.bind(mainMod .. "+SUPER_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"), { release = true })
+hl.bind("SUPER + SUPER_L", hl.dsp.exec_cmd(ipc .. " panel-toggle launcher"), { release = true })
 
 hl.bind(mainMod .. "+N", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center home"))
-hl.bind(mainMod .. "+M", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center media"))
+-- hl.bind(mainMod .. "+M", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center media"))
 hl.bind(mainMod .. "+B", hl.dsp.exec_cmd(ipc .. " panel-toggle control-center calendar"))
 
 hl.bind("CTRL+ALT+DELETE", hl.dsp.exec_cmd(ipc .. " panel-toggle session"))
@@ -279,6 +274,11 @@ hl.bind(mainMod .. "+SHIFT+L", hl.dsp.exec_cmd(ipc .. " session suspend"))
 --hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | swappy -f -'"))
 hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd(ipc .. " screenshot-region"))
 hl.bind(mainMod .. "+SHIFT+R", hl.dsp.exec_cmd("noctalia msg plugin noctalia/screen_recorder:service all toggle"))
+--hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
+--hl.bind("SUPER + Tab", function()
+--    hl.plugin.hyprexpo.expo("toggle")
+--end)
+
 -- Reload
 hl.bind(
     "CTRL + SUPER + R",

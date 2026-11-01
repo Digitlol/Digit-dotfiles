@@ -14,6 +14,7 @@ end
 -- Default configurations --
 require("hyprland.execs")
 require("hyprland.general")
+require("hyprland.layout")
 require("hyprland.rules")
 require("hyprland.keybinds")
 

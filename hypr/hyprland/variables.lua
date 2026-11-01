@@ -5,5 +5,6 @@ codeEditor = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'zeditor
 officeSoftware = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'wps' 'onlyoffice-desktopeditors' 'libreoffice'"
 textEditor = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'kate' 'gnome-text-editor' 'emacs'"
 volumeMixer = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'pavucontrol-qt' 'pavucontrol'"
+mail = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'proton-mail'"
 
 workspaceGroupSize = 10
