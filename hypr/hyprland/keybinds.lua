@@ -11,15 +11,15 @@ local ipc = "noctalia msg"
 local launcherScript = "$HOME/.config/hypr/custom/scripts/noctalia-launcher.sh"
 
 --##! Utilities
---# Screenshot, Record, OCR, Color picker
-hl.bind("SUPER + Period", hl.dsp.exec_cmd("emote"))
+--# Screenshot, Record, OCR, Colour picker
+hl.bind("SUPER + Period", hl.dsp.exec_cmd(ipc .. " panel-toggle liamwh/emoji-picker:desktop"))
 hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(hyprScripts .. "/snip_to_search.sh"))
 
---# Color picker
+--# Colour picker
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -a"),
     { description = "Utilities: Pick color #RRGGBB >> clipboard" })
 
---# Fullscreen screenshot
+--# Screenshot
 local grimhyprctl = "grim -o \"$(hyprctl activeworkspace -j | jq -r '.monitor')\""
 hl.bind("Print", hl.dsp.exec_cmd(grimhyprctl .. " - | wl-copy"),
     { locked = true, description = "Utilities: Screenshot >> clipboard" })
@@ -192,6 +192,9 @@ for i = 1, 4 do
     hl.bind("CTRL + SUPER + " .. key[i], hl.dsp.focus({ workspace = prefix[i] }))
 end
 
+--# Make window not huge
+hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
+
 -- hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("systemctl suspend || loginctl suspend"), {locked = true} ) -- # [hidden] Suspend when laptop lid is closed, uncomment if for whatever reason it's not the default behavior
 --
 --##! Apps
@@ -210,10 +213,6 @@ hl.bind("SUPER + Z", hl.dsp.exec_cmd(codeEditor))
 hl.bind("CTRL + SUPER + SHIFT + ALT + W", hl.dsp.exec_cmd(officeSoftware))
 hl.bind("CTRL + SUPER + V", hl.dsp.exec_cmd(volumeMixer))
 hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(TaskManager))
-
---# Cursed stuff
---## Make window not amogus large
-hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
 
 
 -- Noctalia Specific
@@ -239,9 +238,9 @@ hl.bind(mainMod .. "+SHIFT+L", hl.dsp.exec_cmd(ipc .. " session suspend"))
 hl.bind(mainMod .. "+SHIFT+S", hl.dsp.exec_cmd(ipc .. " screenshot-region"))
 hl.bind(mainMod .. "+SHIFT+R", hl.dsp.exec_cmd("noctalia msg plugin noctalia/screen_recorder:service all toggle"))
 --hl.bind("ALT + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
---hl.bind("SUPER + Tab", function()
---    hl.plugin.hyprexpo.expo("toggle")
---end)
+hl.bind("SUPER + Tab", function()
+    hl.plugin.hyprexpo.expo("toggle")
+end)
 
 -- Reload
 hl.bind(

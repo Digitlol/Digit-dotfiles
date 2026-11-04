@@ -6,8 +6,10 @@ officeSoftware = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'wps
 textEditor = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'kate' 'gnome-text-editor' 'emacs'"
 volumeMixer = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'pavucontrol-qt' 'pavucontrol'"
 mail = "~/.config/hypr/hyprland/scripts/launch_first_available.sh 'proton-mail'"
-Browser = 'helium-browser --profile-directory="Profile 1" --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-features=WaylandWpColorManagerV1'
-Workbrowser = 'helium-browser --profile-directory="Profile 2" --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-features=WaylandWpColorManagerV1'
+Workbrowser = '/opt/zen-browser-bin/zen --no-remote --profile "/home/digit/.config/zen/3rPDsqvG.Profile 1"'
+Browser = '/opt/zen-browser-bin/zen --no-remote --profile "/home/digit/.config/zen/8tFUlxx7.Profile 2"'
+--Browser = 'helium-browser --profile-directory="Profile 1" --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-features=WaylandWpColorManagerV1'
+--Workbrowser = 'helium-browser --profile-directory="Profile 2" --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-features=WaylandWpColorManagerV1'
 TaskManager = "$HOME/.config/hypr/custom/scripts/sysmon.sh"
 Discord = "$HOME/.config/hypr/custom/scripts/start-discord.sh"
 
